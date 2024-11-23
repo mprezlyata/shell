@@ -38,19 +38,19 @@ cd data/processed
 mkdir server_logs user_logs event_logs 
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-cp ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/raw/server*.log ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/processed/server_logs
+cd ../../
+cp data/raw/server*.log data/processed/server_logs
 
 # 6. Repeat the above step for user logs and event logs
-cp ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/raw/user*.log ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/processed/user_logs
-cp ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/raw/event*.log ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/processed/event_logs
+cp data/raw/user*.log data/processed/user_logs
+cp data/raw/event*.log data/processed/event_logs
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rm ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/raw/*ipaddr* ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/processed/user_logs/*ipaddr*
+rm data/raw/*ipaddr* data/processed/user_logs/*ipaddr* 
 
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-touch ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/inventory.txt
-ls ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/processed/* > ~/Documents/Marta/"DSI - Toronto University"/Assignments/Assignment_1/data/inventory.txt 
-
+touch data/inventory.txt 
+ls data/processed/* > data/inventory.txt 
 
 ###########################################
 
